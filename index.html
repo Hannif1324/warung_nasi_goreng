@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<!-- Dokumen ini adalah HTML5 -->
+<html lang="id">
+  <!-- Bahasa dokumen diatur ke Indonesia -->
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Mengatur encoding karakter ke UTF-8 agar semua karakter terbaca -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Agar tampilan responsif di HP -->
+    <title>Warung Nasi Goreng Wayang</title>
+    <!-- Judul yang muncul di tab browser -->
+
+    <!-- Mengambil font dari Google Fonts: Merriweather (Klasik) dan Open Sans (Mudah dibaca) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Menghubungkan file CSS kita -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAVIGASI: Bagian menu atas -->
+    <nav class="navbar">
+      <div class="container">
+        <!-- Wadah untuk membatasi lebar konten -->
+        <a href="#" class="logo">NG Wayang.</a>
+        <!-- Logo teks -->
+        <ul class="nav-links">
+          <!-- Daftar menu navigasi -->
+          <li><a href="#hero">Beranda</a></li>
+          <!-- Link ke bagian atas -->
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#kontak">Pesan</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- SECTION 1: HERO (Tampilan Utama) -->
+    <header id="hero" class="hero-section">
+      <div class="hero-bg"></div>
+      <!-- Latar belakang terpisah untuk efek -->
+      <div class="container hero-content">
+        <h1 class="fade-in">
+          Cita Rasa Legenda <br />
+          Tanah Jawa
+        </h1>
+        <!-- Judul utama dengan efek animasi -->
+        <p class="fade-in delay-1">
+          Nikmati Nasi Goreng autentik dengan suasana wayang yang syahdu.
+        </p>
+        <!-- Sub-judul -->
+        <a href="#menu" class="btn-primary fade-in delay-2">Lihat Menu</a>
+        <!-- Tombol panggilan tindakan (CTA) -->
+
+        <!-- Elemen Dekorasi Wayang (Animasi Sederhana) -->
+        <div class="wayang-shadow fade-in delay-3">
+          <img
+            src="images/hero.png"
+            alt="Nasi Goreng Spesial"
+            class="hero-img"
+          />
+          <!-- Gambar Nasi Goreng -->
+        </div>
+      </div>
+    </header>
+
+    <!-- SECTION 2: TENTANG KAMI -->
+    <section id="tentang" class="section">
+      <div class="container split-layout">
+        <!-- Layout terbagi dua kolom -->
+        <div class="text-block">
+          <h2>Warisan Kuliner</h2>
+          <!-- Judul Seksi -->
+          <p>
+            Bermula dari resep turun temurun Eyang Putri, Warung Nasi Goreng
+            Wayang menghadirkan rasa yang tak lekang oleh waktu. Kami memadukan
+            bumbu rempah pilihan dengan teknik memasak tradisional menggunakan
+            anglo arang.
+          </p>
+          <p>
+            Filosofi kami sederhana: Masak dengan hati, sajikan dengan janji.
+          </p>
+        </div>
+        <div class="image-block">
+          <img src="images/atmosphere.png" alt="Suasana Warung" />
+          <!-- Gambar interior -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: KEUNGGULAN (Kenapa Kami?) -->
+    <section id="keunggulan" class="section bg-pattern">
+      <!-- Background pattern wayang -->
+      <div class="container text-center">
+        <!-- Konten rata tengah -->
+        <h2>Kenapa Harus Kami?</h2>
+        <div class="features-grid">
+          <!-- Grid untuk fitur -->
+          <div class="feature-card">
+            <div class="icon">🔥</div>
+            <!-- Ikon emoji sederhana -->
+            <h3>Masak Arang</h3>
+            <p>Aroma 'smokey' khas yang tidak bisa didapat dari kompor gas.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🌾</div>
+            <h3>Beras Pilihan</h3>
+            <p>
+              Menggunakan beras pera berkualitas tinggi, pas untuk nasi goreng.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🛖</div>
+            <h3>Suasana Syahdu</h3>
+            <p>Makan ditemani alunan gamelan lamat-lamat yang menenangkan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: MENU ANDALAN -->
+    <section id="menu" class="section">
+      <div class="container text-center">
+        <h2>Menu Favorit Para Raja</h2>
+        <div class="menu-grid">
+          <!-- Item Menu 1 -->
+          <article class="menu-item">
+            <div class="menu-img-placeholder">🥘</div>
+            <!-- Placeholder jika belum ada gambar spesifik -->
+            <h3>Nasi Goreng Ruwatan</h3>
+            <p class="price">Rp 25.000</p>
+            <p class="desc">
+              Nasi goreng dengan bumbu rempah hitam kluwek, disajikan dengan
+              ayam suwir.
+            </p>
+          </article>
+          <!-- Item Menu 2 -->
+          <article class="menu-item">
+            <div class="menu-img-placeholder">🍤</div>
+            <h3>Nasi Goreng Pandawa</h3>
+            <p class="price">Rp 30.000</p>
+            <p class="desc">
+              Lima toping spesial: udang, bakso, sosis, ati ampela, dan telur
+              mata sapi.
+            </p>
+          </article>
+          <!-- Item Menu 3 -->
+          <article class="menu-item">
+            <div class="menu-img-placeholder">🥚</div>
+            <h3>Nasi Goreng Punakawan</h3>
+            <p class="price">Rp 18.000</p>
+            <p class="desc">
+              Sederhana namun jenaka. Nasi goreng kampung dengan telur dadar dan
+              teri.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: FILOSOFI RASA -->
+    <section id="filosofi" class="section dark-mode">
+      <!-- Mode gelap untuk variasi -->
+      <div class="container text-center">
+        <h2 class="gold-text">Filosofi Gunungan</h2>
+        <p class="quote">
+          "Seperti Gunungan dalam wayang yang melambangkan isi alam semesta,<br />
+          sepiring nasi goreng kami menyatukan berbagai rasa menjadi satu
+          harmoni."
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 6: GALERI -->
+    <section id="galeri" class="section">
+      <div class="container">
+        <h2>Galeri Momen</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="images/hero.png" alt="Foto Makanan 1" />
+          </div>
+          <div class="gallery-item">
+            <img src="images/atmosphere.png" alt="Suasana 1" />
+          </div>
+          <div class="gallery-item">
+            <img src="images/hero.png" alt="Foto Makanan 2" />
+          </div>
+          <div class="gallery-item">
+            <img src="images/atmosphere.png" alt="Suasana 2" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: TESTIMONI -->
+    <section id="testimoni" class="section bg-light">
+      <div class="container text-center">
+        <h2>Apa Kata Penikmat?</h2>
+        <div class="review-carousel">
+          <div class="review-card">
+            <p>
+              "Rasanya membawa saya kembali ke masa kecil di Solo. Autentik!"
+            </p>
+            <h4>- Raden Mas Angga</h4>
+            <span class="stars">⭐⭐⭐⭐⭐</span>
+          </div>
+          <div class="review-card">
+            <p>"Tempat paling asik buat nongkrong sambil menikmati budaya."</p>
+            <h4>- Mbak Sri</h4>
+            <span class="stars">⭐⭐⭐⭐⭐</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: LOKASI SUASANA -->
+    <section id="lokasi" class="section">
+      <div class="container split-layout reverse">
+        <!-- Reverse untuk membalik posisi gambar/teks -->
+        <div class="text-block">
+          <h2>Lokasi Kami</h2>
+          <p>Tersembunyi di sudut kota yang tenang, jauh dari hiruk pikuk.</p>
+          <address>
+            Jl. Gatot Kaca No. 12,<br />
+            Kampung Wayang, Jakarta Selatan.<br />
+            Buka: 17.00 - 00.00 WIB
+          </address>
+        </div>
+        <div class="image-block">
+          <!-- Kita gunakan peta statis sederhana atau gambar suasana -->
+          <div class="map-placeholder">
+            <span>📍 Peta Lokasi</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: KONTAK / FOOTER -->
+    <footer id="kontak" class="footer-section">
+      <div class="container text-center">
+        <h2>Siap Mencoba?</h2>
+        <p>Pesan tempat atau pesan antar sekarang juga.</p>
+        <a href="https://wa.me/62812345678" class="btn-primary btn-wa"
+          >Chat WhatsApp</a
+        >
+
+        <div class="social-links">
+          <a href="#">Instagram</a> | <a href="#">Facebook</a> |
+          <a href="#">TikTok</a>
+        </div>
+
+        <p class="copyright">
+          &copy; 2024 Warung Nasi Goreng Wayang. Dibuat dengan ❤️.
+        </p>
+      </div>
+    </footer>
+
+    <!-- SCRIPT Javascript untuk interaksi -->
+    <script src="script.js"></script>
+  </body>
+</html>

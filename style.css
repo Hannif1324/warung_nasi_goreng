@@ -1,0 +1,388 @@
+/* VARIABEL CSS: Menyimpan warna dan nilai yang sering dipakai agar mudah diubah */
+:root {
+  --primary: #8b4513; /* Coklat Kayu Jati - Warna utama */
+  --primary-dark: #5e2f0d; /* Versi lebih gelap untuk efek hover */
+  --accent: #daa520; /* Emas Wayang - Untuk highlight */
+  --bg-light: #fdf5e6; /* Old Lace - Putih gading, mirip kertas kuno */
+  --bg-dark: #2c1810; /* Kopi Hitam - Latar belakang gelap */
+  --text-dark: #3e2723; /* Cokelat Tua - Warna teks utama */
+  --text-light: #faf3e0; /* Krem - Warna teks di latar gelap */
+  --font-heading: "Merriweather", serif; /* Font klasik untuk judul */
+  --font-body: "Open Sans", sans-serif; /* Font modern untuk isi */
+  --transition: all 0.3s ease; /* Efek transisi halus */
+}
+
+/* RESET DASAR: Menghapus margin bawaan browser agar layout rapi */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Padding dihitung dalam lebar elemen */
+}
+
+/* GAYA UMUM DOKUMEN */
+html {
+  scroll-behavior: smooth; /* Scroll halus saat klik link navigasi */
+}
+
+body {
+  font-family: var(--font-body); /* Menggunakan font body */
+  background-color: var(--bg-light); /* Latar belakang krem */
+  color: var(--text-dark); /* Teks cokelat */
+  line-height: 1.6; /* Jarak antar baris agar mudah dibaca */
+  overflow-x: hidden; /* Mencegah scroll horizontal yang tidak perlu */
+}
+
+/* TYPOGRAPHY */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading); /* Font judul serif */
+  font-weight: 700; /* Tebal */
+  margin-bottom: 1rem; /* Jarak bawah */
+}
+
+a {
+  text-decoration: none; /* Hilangkan garis bawah link */
+  color: inherit; /* Ikuti warna teks induk */
+}
+
+/* CONTAINER: Pembatas lebar konten agar tidak terlalu lebar di layar besar */
+.container {
+  max-width: 1200px; /* Lebar maksimal */
+  margin: 0 auto; /* Tengah secara horizontal */
+  padding: 0 20px; /* Jarak dalam kanan-kiri */
+}
+
+/* NAVBAR: Navigasi Atas */
+.navbar {
+  background-color: rgba(253, 245, 230, 0.95); /* Krem transparan */
+  padding: 1rem 0;
+  position: fixed; /* Tetap di atas saat di-scroll */
+  width: 100%;
+  top: 0;
+  z-index: 1000; /* Di atas elemen lain */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+}
+
+.navbar .container {
+  display: flex; /* Menyusun logo dan menu bersebelahan */
+  justify-content: space-between; /* Logo kiri, menu kanan */
+  align-items: center; /* Tengah vertikal */
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex; /* Menu berjejer ke samping */
+  list-style: none; /* Hilangkan titik bullet */
+  gap: 2rem; /* Jarak antar menu */
+}
+
+.nav-links a {
+  color: var(--text-dark);
+  font-weight: 600;
+  transition: var(--transition); /* Efek perubahan warna halus */
+}
+
+.nav-links a:hover {
+  color: var(--accent); /* Berubah emas saat kursor di atasnya */
+}
+
+/* HERO SECTION: Bagian Utama */
+.hero-section {
+  height: 100vh; /* Tinggi memenuhi layar penuh */
+  display: flex; /* Flexbox untuk menengahkan konten */
+  align-items: center;
+  position: relative;
+  padding-top: 80px; /* Kompensasi navbar fixed */
+  background: linear-gradient(to right, #fdf5e6 50%, rgba(253, 245, 230, 0.8)),
+    url("images/bg_pattern.png");
+  /* Gradient agar teks terbaca jelas di kiri */
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Teks rata kiri */
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem; /* Judul sangat besar */
+  color: var(--primary);
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.wayang-shadow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45%;
+  z-index: -1; /* Di belakang teks jika layar kecil */
+  opacity: 0.9;
+}
+
+.hero-img {
+  width: 100%;
+  border-radius: 20px; /* Sudut membulat */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2); /* Bayangan dramatis */
+  animation: float 6s ease-in-out infinite; /* Animasi melayang */
+}
+
+/* ANIMASI KEYFRAMES: Mendefinisikan tahapan perubahan visual untuk efek melayang */
+@keyframes float {
+  0% {
+    /* Titik awal: elemen berada di posisi aslinya */
+    transform: translateY(0px);
+  }
+  50% {
+    /* Titik tengah: elemen bergeser ke atas (negatif Y) sebesar 20 pixel */
+    transform: translateY(-20px);
+  }
+  100% {
+    /* Titik akhir: elemen kembali ke posisi semula agar animasi mulus (looping) */
+    transform: translateY(0px);
+  }
+}
+
+/* BUTTONS */
+.btn-primary {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 50px; /* Bulat kapsul */
+  font-weight: bold;
+  transition: var(--transition);
+  display: inline-block; /* Agar bisa dikasih margin/padding */
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-3px); /* Naik sedikit saat di-hover */
+  box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+}
+
+/* SECTIONS UMUM */
+.section {
+  padding: 5rem 0; /* Jarak vertikal yang lega */
+}
+
+.text-center {
+  text-align: center; /* Rata tengah */
+}
+
+/* LAYOUT DUA KOLOM (Split) */
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dua kolom sama lebar */
+  gap: 4rem; /* Jarak antar kolom */
+  align-items: center;
+}
+
+.split-layout.reverse .text-block {
+  order: 2; /* Teks pindah ke kanan */
+}
+
+.image-block img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 10px 10px 0 var(--accent); /* Efek bingkai emas padat */
+}
+
+/* FEATURES / KEUNGGULAN */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* Responsif otomatis */
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.feature-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px); /* Efek angkat */
+}
+
+.feature-card .icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* MENU GRID */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.menu-item {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.05); /* Garis tipis */
+}
+
+.menu-img-placeholder {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.menu-item h3 {
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+.price {
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+/* DARK MODE SECTION (Filosofi) */
+.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  background-image: url("images/bg_pattern.png"); /* Pattern wayang */
+  background-blend-mode: overlay; /* Campurkan pattern dengan warna gelap */
+}
+
+.gold-text {
+  color: var(--accent);
+}
+
+.quote {
+  font-size: 1.5rem;
+  font-style: italic;
+  font-family: var(--font-heading);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* GALERI */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover; /* Potong gambar agar pas kotak */
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05); /* Zoom sedikit */
+}
+
+/* TESTIMONI */
+.review-carousel {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.review-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  border-left: 5px solid var(--accent); /* Aksen garis kiri */
+}
+
+/* FOOTER */
+.footer-section {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  padding: 4rem 0 2rem;
+}
+
+.btn-wa {
+  background-color: #25d366; /* Warna WA */
+  margin: 2rem 0;
+}
+
+.social-links a {
+  margin: 0 10px;
+  color: var(--text-light);
+  font-weight: bold;
+}
+
+.copyright {
+  margin-top: 3rem;
+  opacity: 0.6;
+  font-size: 0.9rem;
+}
+
+/* ANIMASI FADE IN (Untuk Javascript) */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE: Mode HP (Layar < 768px) */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem; /* Perkecil font */
+  }
+
+  .wayang-shadow {
+    position: relative; /* Tidak melayang lagi */
+    width: 100%;
+    margin-top: 2rem;
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-section {
+    height: auto; /* Tinggi fleksibel */
+    padding-bottom: 4rem;
+  }
+
+  .split-layout {
+    grid-template-columns: 1fr; /* Satu kolom */
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr; /* Satu kolom menu */
+  }
+}
